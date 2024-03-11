@@ -6,25 +6,11 @@
 /*   By: eescalei <eescalei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 18:20:45 by eescalei          #+#    #+#             */
-/*   Updated: 2024/02/19 19:24:37 by eescalei         ###   ########.fr       */
+/*   Updated: 2024/03/11 18:30:44 by eescalei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/minishell.h"
-
-int	ft_substrr(char **str, char *s, int start, int len)
-{
-	int	i;
-
-	i = 0;
-	while (i < len)
-	{
-		(*str)[i] = s[start + i];
-		i++;
-	}
-	(*str)[i] = '\0';
-	return (0);
-}
 
 int	ft_count_word(char *s, char c)
 {
@@ -68,7 +54,7 @@ void	ft_free(char **strs, int j)
 	return ;
 }
 
-int	ft_splitt(char ***strs, char *s, char c)
+int	ft_split(char ***strs, char *s, char c)
 {
 	int		i;
 	int		word;
@@ -86,7 +72,7 @@ int	ft_splitt(char ***strs, char *s, char c)
 			i++;
 		size = ft_size_word(s, c, i);
 		strs[0][j] = (char *)malloc((size + 1) * sizeof(char));
-		ft_substrr(&(strs[0][j]), s, i, size);
+		ft_substr(&(strs[0][j]), s, i, size);
 		if (!strs[0][j])
 			ft_free(*strs, j);
 		i += size;

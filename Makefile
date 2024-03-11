@@ -6,7 +6,7 @@
 #    By: eescalei <eescalei@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/12 17:38:20 by eescalei          #+#    #+#              #
-#    Updated: 2024/03/11 00:32:30 by eescalei         ###   ########.fr        #
+#    Updated: 2024/03/11 18:31:06 by eescalei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,10 @@ CC = cc
 FLAGS = #-Wall -Wextra -Werror
 SRC = main.c \
 		innit_data.c \
-		list_funcs.c
+		list_funcs.c \
+		cmd_hand.c \
+		ft_split.c \
+		string_funcs.c 
 
 SRC_PATH = ./src/
 OBJ_PATH = ./obj/
