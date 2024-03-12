@@ -6,7 +6,7 @@
 /*   By: eescalei <eescalei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 17:41:46 by eescalei          #+#    #+#             */
-/*   Updated: 2024/03/11 18:36:22 by eescalei         ###   ########.fr       */
+/*   Updated: 2024/03/12 00:24:51 by eescalei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,11 @@ typedef struct s_list
 
 typedef struct s_data
 {
-	t_list	*envp;	/* list of environment variables */
+	t_list	*env;	/* list of environment variables */
 	t_list	*vars;	/* list of variables defined by user */
 	t_list	*pipe;
 	t_list 	*cmd;
-	t_list	*fd; //not used yet
+	// t_list	*fd; //not used yet
 	int 	cmd_count;
 	// int		fdout;
 	// pid_t 	*pid;
@@ -56,9 +56,12 @@ int main(int argc, char **argv, char **envp);
 t_list	*set_env(char **envp);
 void	innit_struct(t_data *data, char **envp);
 
+/* builtin functions */
+int builtin_pwd(t_data *data);
+int builtin_env(t_data *data);
+
 /* command handling */
 int	get_command_count(t_data *data);
-int builtin_pwd(t_data *data);
 
 
 /* list functions */

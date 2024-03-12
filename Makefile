@@ -6,7 +6,7 @@
 #    By: eescalei <eescalei@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/12 17:38:20 by eescalei          #+#    #+#              #
-#    Updated: 2024/03/11 18:31:06 by eescalei         ###   ########.fr        #
+#    Updated: 2024/03/12 00:18:49 by eescalei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,8 @@ SRC = main.c \
 		list_funcs.c \
 		cmd_hand.c \
 		ft_split.c \
-		string_funcs.c 
+		string_funcs.c \
+		builtin_funcs.c
 
 SRC_PATH = ./src/
 OBJ_PATH = ./obj/
