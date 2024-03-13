@@ -6,7 +6,7 @@
 /*   By: eescalei <eescalei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 17:41:46 by eescalei          #+#    #+#             */
-/*   Updated: 2024/03/12 00:24:51 by eescalei         ###   ########.fr       */
+/*   Updated: 2024/03/13 19:34:01 by eescalei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ typedef struct s_data
 	t_list	*vars;	/* list of variables defined by user */
 	t_list	*pipe;
 	t_list 	*cmd;
+	char	*path_envp;
 	// t_list	*fd; //not used yet
 	int 	cmd_count;
 	// int		fdout;
@@ -53,6 +54,7 @@ typedef struct s_data
 int main(int argc, char **argv, char **envp);
 
 /* init data */
+char	*get_path_envp(t_data *data);
 t_list	*set_env(char **envp);
 void	innit_struct(t_data *data, char **envp);
 
@@ -70,6 +72,7 @@ t_list	*lst_last(t_list *lst);
 void	lst_add_at_end(t_list **lst, t_list *new);
 
 /* string functions */
+size_t	ft_strlen(const char *s);
 int	ft_split(char ***strs, char *s, char c);
 int	ft_substr(char **str, char *s, int start, int len);
 int	ft_strncmp(char *s1, const char *s2, int n);

@@ -6,11 +6,22 @@
 /*   By: eescalei <eescalei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 18:30:19 by eescalei          #+#    #+#             */
-/*   Updated: 2024/03/11 18:30:49 by eescalei         ###   ########.fr       */
+/*   Updated: 2024/03/13 19:42:06 by eescalei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/minishell.h"
+
+size_t	ft_strlen(const char *s)
+{
+	int	x;
+
+	x = 0;
+	while (*(s + x) != '\0')
+		x++;
+	return (x);
+}
+
 
 int	ft_substr(char **str, char *s, int start, int len)
 {
