@@ -6,7 +6,7 @@
 /*   By: eescalei <eescalei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 17:41:46 by eescalei          #+#    #+#             */
-/*   Updated: 2024/03/13 19:34:01 by eescalei         ###   ########.fr       */
+/*   Updated: 2024/03/21 11:17:24 by eescalei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <unistd.h>
 # include <stddef.h>
 # include <stdlib.h>
-#include <string.h>
+# include <string.h>
 # include <ctype.h>
 # include <string.h>
 # include <stdio.h>
@@ -38,11 +38,11 @@ typedef struct s_data
 	t_list	*pipe;
 	t_list 	*cmd;
 	char	*path_envp;
-	// t_list	*fd; //not used yet
+	char	**path;	/* Contains every path from path_envp separated in strings */
 	int 	cmd_count;
+	// t_list	*fd; //not used yet
 	// int		fdout;
 	// pid_t 	*pid;
-	// char	**path;
 	// int		cmd_count;
 	// char 	**cmd;
 	// char	*cmd_path;
@@ -64,6 +64,7 @@ int builtin_env(t_data *data);
 
 /* command handling */
 int	get_command_count(t_data *data);
+void get_path(t_data *data, char *cmd);
 
 
 /* list functions */
