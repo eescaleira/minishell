@@ -6,7 +6,7 @@
 /*   By: eescalei <eescalei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 17:41:46 by eescalei          #+#    #+#             */
-/*   Updated: 2024/03/21 11:17:24 by eescalei         ###   ########.fr       */
+/*   Updated: 2024/03/24 21:37:22 by eescalei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,13 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }				t_list;
+
+typedef struct s_cmd
+{
+	char	*cmd;
+	char	**args;
+	char	*cmd_path;
+}				t_cmd;
 
 typedef struct s_data
 {
@@ -65,10 +72,11 @@ int builtin_env(t_data *data);
 /* command handling */
 int	get_command_count(t_data *data);
 void get_path(t_data *data, char *cmd);
+int	create_cmds_struct(t_data *data, char *cmd);// test nedded
 
 
 /* list functions */
-t_list	*lst_new(char *content);
+t_list	*lst_new(void *content); // void instead of char ?!
 t_list	*lst_last(t_list *lst);
 void	lst_add_at_end(t_list **lst, t_list *new);
 

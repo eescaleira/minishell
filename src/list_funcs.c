@@ -6,13 +6,13 @@
 /*   By: eescalei <eescalei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 23:39:47 by eescalei          #+#    #+#             */
-/*   Updated: 2024/03/11 00:22:35 by eescalei         ###   ########.fr       */
+/*   Updated: 2024/03/24 21:36:28 by eescalei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/minishell.h"
 
-t_list	*lst_new(char *content)
+t_list	*lst_new(void *content)
 {
 	t_list	*elem;
 
@@ -40,8 +40,8 @@ void	lst_add_at_end(t_list **lst, t_list *new)
 {
 	t_list	*temp;
 
-	if (lst)
-	{
+	// if (lst)
+	// {
 		if (*lst == NULL)
 			*lst = new;
 		else
@@ -50,5 +50,5 @@ void	lst_add_at_end(t_list **lst, t_list *new)
 			new->prev = temp;
 			temp->next = new;
 		}
-	}
+	// }
 }
