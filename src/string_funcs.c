@@ -6,7 +6,7 @@
 /*   By: eescalei <eescalei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 18:30:19 by eescalei          #+#    #+#             */
-/*   Updated: 2024/03/13 19:42:06 by eescalei         ###   ########.fr       */
+/*   Updated: 2024/03/25 13:31:44 by eescalei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,4 +55,27 @@ int	ft_strncmp(char *s1, const char *s2, int n)
 	if (n == 0)
 		return (0);
 	return (*str1 - *str2);
+}
+
+char	*ft_strjoin(char const *s1, char const *s2)
+{
+	char	*ns;
+	int		i;
+
+	i = 0;
+	ns = malloc((ft_strlen(s1) + ft_strlen(s2) +1) * sizeof(char));
+	if (ns == NULL)
+		return (NULL);
+	while (s1[i] != '\0')
+	{
+		ns[i] = s1[i];
+		i++;
+	}
+	while (s2[i - ft_strlen(s1)] != '\0')
+	{
+		ns[i] = s2[i - ft_strlen(s1)];
+		i++;
+	}
+	ns[i] = '\0';
+	return (ns);
 }

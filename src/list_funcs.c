@@ -6,7 +6,7 @@
 /*   By: eescalei <eescalei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 23:39:47 by eescalei          #+#    #+#             */
-/*   Updated: 2024/03/24 21:36:28 by eescalei         ###   ########.fr       */
+/*   Updated: 2024/03/25 13:47:35 by eescalei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,4 +51,5 @@ void	lst_add_at_end(t_list **lst, t_list *new)
 			temp->next = new;
 		}
 	// }
+	
 }

@@ -6,7 +6,7 @@
 /*   By: eescalei <eescalei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 23:17:49 by eescalei          #+#    #+#             */
-/*   Updated: 2024/03/13 19:41:51 by eescalei         ###   ########.fr       */
+/*   Updated: 2024/03/25 13:49:13 by eescalei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,6 @@ void	innit_struct(t_data *data, char **envp)
 {
 	data->env = set_env(envp);
 	data->path_envp = get_path_envp(data);
+	ft_split(&data->path, data->path_envp, ':');
 }
 
