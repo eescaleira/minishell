@@ -6,7 +6,7 @@
 /*   By: eescalei <eescalei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 01:17:15 by eescalei          #+#    #+#             */
-/*   Updated: 2024/03/25 13:52:39 by eescalei         ###   ########.fr       */
+/*   Updated: 2024/03/28 15:42:42 by eescalei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void get_path(t_data *data, char *cmd)
 	}
 }
 
-int	get_cmd_path(t_data *data, char *cmd)
+int	get_cmd_path(t_data *data, char *cmd)// cmd_path transformar em estrutura de comando
 {
 	int		i;
 	char	*path;
