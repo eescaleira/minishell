@@ -6,7 +6,7 @@
 /*   By: eescalei <eescalei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 01:17:15 by eescalei          #+#    #+#             */
-/*   Updated: 2024/03/28 15:42:42 by eescalei         ###   ########.fr       */
+/*   Updated: 2024/04/09 15:14:30 by eescalei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,22 +49,32 @@ void get_path(t_data *data, char *cmd)
 	}
 }
 
-int	get_cmd_path(t_data *data, char *cmd)// cmd_path transformar em estrutura de comando
+int	get_cmd_path(t_data *data, char *cmd)// test final struct data// cmd_path transformar em estrutura de comando
 {
 	int		i;
 	char	*path;
 	char	*cmd_path;
 	char	**args;
+	t_cmd	*cmd_struct;
 
 	i = 0;
-	ft_split(&args, cmd, ' ');	//free args
+	cmd_struct = malloc(sizeof(t_cmd));
+	if (cmd_struct == NULL)
+	{
+		printf("Error: malloc failed\n"); // exit properly
+		exit(1);
+	}
+	ft_split(&args, cmd, ' ');//free args
 	while (data->path[i] != NULL)
 	{
 		path = ft_strjoin(data->path[i], "/");
 		cmd_path = ft_strjoin(path, args[0]);
 		if (access(cmd_path, X_OK) == 0)
-		{	
-			lst_add_at_end(&data->cmd, lst_new(cmd_path));
+		{
+			cmd_struct->cmd = args[0];
+			cmd_struct->args = args[1];
+			cmd_struct->cmd = cmd_path;
+			lst_add_at_end(&data->cmd, lst_new(cmd_struct));
 			printf("Command PATH: %s\n", cmd_path);
 			free(path);
 			return (0);

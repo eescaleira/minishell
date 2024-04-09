@@ -6,7 +6,7 @@
 /*   By: eescalei <eescalei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 17:41:46 by eescalei          #+#    #+#             */
-/*   Updated: 2024/03/28 17:47:07 by eescalei         ###   ########.fr       */
+/*   Updated: 2024/04/09 15:04:58 by eescalei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,14 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }				t_list;
+
+typedef struct s_cmd
+{
+	char	*cmd;
+	char	**args;
+	char	*path;
+}				t_cmd;
+
 
 typedef struct s_data
 {
